@@ -72,10 +72,10 @@ class Room(core_models.TimeStampedModel):
     # 1대다, 1:Many일때는 ForeignKey를 사용해 연결. 여기서는 host를 미리만들어 둔 user model이랑 연결.1명의 호스트에 여러 유저가 연결 가능.
     room_type = models.ForeignKey(
         RoomType, on_delete=models.SET_NULL, null=True, blank=True)
-    amenities = models.ManyToManyField("Amenity", null=True, blank=True)
+    amenities = models.ManyToManyField("Amenity", blank=True)
     # 다대다, Many to Many인 relationship에는 ManytoManyField를 사용해 연결. 여기서는 amenities를 여러개 룸에 연결 가능.
-    facilities = models.ManyToManyField("Facility", null=True, blank=True)
-    house_rules = models.ManyToManyField("HouseRule", null=True, blank=True)
+    facilities = models.ManyToManyField("Facility", blank=True)
+    house_rules = models.ManyToManyField("HouseRule", blank=True)
 
     # country경우 장고에서 제공하는 country 패키지 깔아서 사용 https://pypi.org/project/django-countries/
     # installation부분참고하여 인스톨
