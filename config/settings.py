@@ -39,10 +39,16 @@ DJANGO_APPS = [
 ]
 
 PROJECT_APPS = [
+    "core.apps.CoreConfig",
     "users.apps.UsersConfig",
+    "rooms.apps.RoomsConfig",
 ]
+# application에 대한 작업을 시작하기전에 settings.py의 project_apps에 해당 application의 config를 추가해줘야함.
+
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
+
+THIRD_APPS = ["django_countries"]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
