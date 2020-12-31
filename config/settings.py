@@ -43,6 +43,9 @@ PROJECT_APPS = [
     "users.apps.UsersConfig",
     "rooms.apps.RoomsConfig",
     "reviews.apps.ReviewsConfig",
+    "reservations.apps.ReservationsConfig",
+    "lists.apps.ListsConfig",
+    "conversations.apps.ConversationsConfig",
 ]
 # application에 대한 작업을 시작하기전에 settings.py의 project_apps에 해당 application의 config를 추가해줘야함.
 
